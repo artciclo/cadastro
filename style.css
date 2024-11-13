@@ -1,17 +1,20 @@
+/* Estilos base */
 body {
     font-family: Arial, sans-serif;
-    background: rgb(2,0,36);
-    background: -moz-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 4%, rgba(0,100,120,1) 46%, rgba(2,138,166,1) 90%);
-    background: -webkit-linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 4%, rgba(0,100,120,1) 46%, rgba(2,138,166,1) 90%);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 4%, rgba(0,100,120,1) 46%, rgba(2,138,166,1) 90%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#028aa6",GradientType=1);
+    background: rgb(2, 0, 36);
+    background: -moz-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 4%, rgba(0, 100, 120, 1) 46%, rgba(2, 138, 166, 1) 90%);
+    background: -webkit-linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 4%, rgba(0, 100, 120, 1) 46%, rgba(2, 138, 166, 1) 90%);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 4%, rgba(0, 100, 120, 1) 46%, rgba(2, 138, 166, 1) 90%);
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     padding: 20px;
 }
 
 .container {
     max-width: 800px;
+    width: 100%;
     background-color: #c2c2c296;
     padding: 20px;
     border-radius: 8px;
@@ -32,7 +35,6 @@ label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-    
 }
 
 input, textarea {
@@ -51,16 +53,22 @@ button {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
+#export-btn {
+    margin-top: 20px;
+}
+
 table {
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
+    overflow-x: auto;
 }
 
 th, td {
@@ -71,4 +79,71 @@ th, td {
 
 th {
     background-color: #f0f4f8;
+}
+
+/* Estilos responsivos */
+
+/* Para tablets (768px ou menos) */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    #export-btn {
+        width: 100%;
+    }
+}
+
+/* Para dispositivos móveis (480px ou menos) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1, h2 {
+        font-size: 18px;
+    }
+
+    .form-group {
+        padding: 0 10px;
+    }
+
+    input, textarea, button {
+        font-size: 14px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    th, td {
+        display: block;
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+    }
+
+    tr {
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+    }
 }
